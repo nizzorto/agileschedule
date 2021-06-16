@@ -7,21 +7,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.CompassoSquad3.HelpCalendar.Service.CalendarioService;
-
+import br.com.agileschedule.Components.CalendarioConverter;
+import br.com.agileschedule.DTO.CalendarioDto;
 import br.com.agileschedule.Entity.Calendario;
+import br.com.agileschedule.Repository.CalendarioRepository;
 
 @RestController
 public class homeController {
+	
+	@Autowired
+	private CalendarioConverter convert;
 
 	@Autowired
-	private CalendarioService calenS;
+	private CalendarioRepository calendarioR;
 	
 	@RequestMapping(value = "agenda", method = RequestMethod.GET)
-	public List<Calendario> listCalendario(){
-		calenS.pegarTodos();
-		
-		return null;
+	public List<CalendarioDto> listCalendario(){
+		List<Calendario> calen = calendarioR.findAll();
+		return convert.entidadeDto(calen);
 	}
 	
 	
