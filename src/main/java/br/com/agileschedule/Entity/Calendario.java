@@ -1,5 +1,7 @@
 package br.com.agileschedule.Entity;
 
+import java.util.Calendar;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,16 +15,16 @@ public class Calendario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "date")
-	private Calendario date;
+	@Column(name = "data")
+	private Calendar data;
 	
 	@Column(name = "descricao")
 	private String descricao;
 	
-	public Calendario(Long id, Calendario date, String descricao) {
+	public Calendario(Long id, Calendar data, String descricao) {
 		super();
 		this.id = id;
-		this.date = date;
+		this.data = data;
 		this.descricao = descricao;
 	}
 
@@ -34,12 +36,12 @@ public class Calendario {
 		this.id = id;
 	}
 
-	public Calendario getDate() {
-		return date;
+	public Calendar getData() {
+		return data;
 	}
 
-	public void setDate(Calendario date) {
-		this.date = date;
+	public void setData(Calendar data) {
+		this.data = data;
 	}
 
 	public String getDescricao() {
