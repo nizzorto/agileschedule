@@ -21,13 +21,16 @@ public class Calendario {
 	@Column(name = "descricao")
 	private String descricao;
 	
-	public Calendario(Long id, Calendar data, String descricao) {
+	public Calendario( Calendar data, String descricao) {
 		super();
-		this.id = id;
 		this.data = data;
 		this.descricao = descricao;
 	}
 
+	public Calendario() {
+	}
+
+	
 	public Long getId() {
 		return id;
 	}
@@ -51,7 +54,6 @@ public class Calendario {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	
+
 	
 }

@@ -2,33 +2,49 @@ package br.com.agileschedule.Form;
 
 import java.util.Calendar;
 
+import javax.validation.constraints.NotNull;
+
+import br.com.agileschedule.Entity.Calendario;
+import br.com.agileschedule.Repository.CalendarioRepository;
+
 public class CalendarioForm {
 
-	private Calendar date;
+	@NotNull
+	private Calendar data;
+	
+	@NotNull
 	private String descricao;
-	
-	
 	
 	public CalendarioForm() {
 		super();
 	}
-	public CalendarioForm(Calendar date, String descricao) {
+	
+	public CalendarioForm(Calendar data, String descricao) {
 		super();
-		this.date = date;
+		this.data = data;
 		this.descricao = descricao;
 	}
-	public Calendar getDate() {
-		return date;
+	
+	public Calendar getData() {
+		return data;
 	}
-	public void setDate(Calendar date) {
-		this.date = date;
+	
+	public void setDate(Calendar data) {
+		this.data = data;
 	}
 	
 	public String getDescricao() {
 		return descricao;
 	}
+	
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public Calendario toForm(CalendarioRepository calendarioR) {
+		Calendario calen = new Calendario(data, descricao);
+		calendarioR.save(calen);
+		return calen;
 	}
 	
 	
