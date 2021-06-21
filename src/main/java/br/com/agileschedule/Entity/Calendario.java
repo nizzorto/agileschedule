@@ -1,6 +1,6 @@
 package br.com.agileschedule.Entity;
 
-import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,12 +16,12 @@ public class Calendario {
 	private Long id;
 	
 	@Column(name = "data")
-	private Calendar data;
+	private Date data;
 	
 	@Column(name = "descricao")
 	private String descricao;
 	
-	public Calendario( Calendar data, String descricao) {
+	public Calendario( Date data, String descricao) {
 		super();
 		this.data = data;
 		this.descricao = descricao;
@@ -39,11 +39,11 @@ public class Calendario {
 		this.id = id;
 	}
 
-	public Calendar getData() {
+	public Date getData() {
 		return data;
 	}
 
-	public void setData(Calendar data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 

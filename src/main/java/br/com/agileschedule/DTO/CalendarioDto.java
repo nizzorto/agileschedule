@@ -1,25 +1,26 @@
 package br.com.agileschedule.DTO;
 
-import java.util.Calendar;
+import java.util.Date;
 
 import br.com.agileschedule.Entity.Calendario;
 
+
 public class CalendarioDto {
 
-	private Calendar data;
+	private Date data;
 	private String descricao;
 
 	public CalendarioDto() {
 		super();
 	}
 
-	public CalendarioDto(Calendar data, String descricao) {
+	public CalendarioDto(Date data, String descricao) {
 		super();
 		this.data = data;
 		this.descricao = descricao;
 	}
 
-	public Calendar getData() {
+	public Date getData() {
 		return data;
 	}
 
@@ -27,7 +28,7 @@ public class CalendarioDto {
 		return descricao;
 	}
 
-	public void setData(Calendar data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 
@@ -35,13 +36,13 @@ public class CalendarioDto {
 		this.descricao = descricao;
 	}
 
-	public Object EntidDto(Calendario calen) {
-		CalendarioDto calenDto = new CalendarioDto();
-		calenDto.setData(calen.getData());
-		calenDto.setDescricao(getDescricao());
-		return calenDto;
+	public CalendarioDto EntidDto(Calendario calen) {
+		CalendarioDto dto = new CalendarioDto();
+		dto.setData(calen.getData());
+		dto.setDescricao(calen.getDescricao());
+		return dto;
 	}
-	
+
 	
 
 }

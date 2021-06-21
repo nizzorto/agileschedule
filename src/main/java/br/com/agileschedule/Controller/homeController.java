@@ -25,7 +25,7 @@ import br.com.agileschedule.Entity.Calendario;
 import br.com.agileschedule.Form.CalendarioForm;
 import br.com.agileschedule.Repository.CalendarioRepository;
 
-@Controller
+@RestController("/")
 public class homeController {
 	
 	@Autowired
@@ -34,10 +34,9 @@ public class homeController {
 	@Autowired
 	private CalendarioRepository calendarioR;
 	
-	@GetMapping("/")
+	@GetMapping
 	public ModelAndView home() {
 		return new ModelAndView("index");
-		
 	}
 	
 	@GetMapping("/Calendario")
@@ -46,8 +45,8 @@ public class homeController {
 		return convert.entidadeDto(calen);
 	}
 	
-	@PostMapping
-	public ResponseEntity<Object> criarEvento(@RequestBody @Valid CalendarioForm calenForm,
+	@PostMapping("newCalendar")
+	public ResponseEntity<?> criarEvento(@RequestBody @Valid CalendarioForm calenForm,
 			UriComponentsBuilder builder){
 		try {
 			Calendario calen = calenForm.toForm(calendarioR);

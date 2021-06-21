@@ -1,16 +1,17 @@
 package br.com.agileschedule.Form;
 
-import java.util.Calendar;
+import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
 import br.com.agileschedule.Entity.Calendario;
 import br.com.agileschedule.Repository.CalendarioRepository;
 
+
 public class CalendarioForm {
 
 	@NotNull
-	private Calendar data;
+	private Date data;
 	
 	@NotNull
 	private String descricao;
@@ -19,17 +20,17 @@ public class CalendarioForm {
 		super();
 	}
 	
-	public CalendarioForm(Calendar data, String descricao) {
+	public CalendarioForm(Date data, String descricao) {
 		super();
 		this.data = data;
 		this.descricao = descricao;
 	}
 	
-	public Calendar getData() {
+	public Date getData() {
 		return data;
 	}
 	
-	public void setDate(Calendar data) {
+	public void setDate(Date data) {
 		this.data = data;
 	}
 	
@@ -46,6 +47,8 @@ public class CalendarioForm {
 		calendarioR.save(calen);
 		return calen;
 	}
+
+	
 	
 	
 	
