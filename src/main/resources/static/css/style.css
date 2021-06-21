@@ -19,6 +19,46 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
+}
+
+.form{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d0f7e8;
+}
+
+.formulario{
+
+}
+
+input{
+    border: none;
+    background-color: white;
+    border-radius: 0.25rem;
+    width: 30%;
+    padding: 1rem;   
+}
+
+.btn{
+    
+}
+
+.btn button{
+    background-color: #167e56;
+    margin-right: 2rem; 
+    height: 5rem;
+    width: 5rem;
+    border-radius: 3rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn button:hover{
+    background-color: #777;
+    border: 0.2rem solid #777;
 }
 
 .calendar{
