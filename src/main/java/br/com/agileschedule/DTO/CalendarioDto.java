@@ -1,48 +1,58 @@
 package br.com.agileschedule.DTO;
 
-import java.util.Date;
-
-import br.com.agileschedule.Entity.Calendario;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 
 public class CalendarioDto {
 
-	private Date data;
+	private LocalDate diaInicial;
+	
+	private LocalDate diaFinal;
+	
+	private LocalTime hrInicial;
+	
+	private LocalTime hrFinal;
+	
 	private String descricao;
+	
+	
 
 	public CalendarioDto() {
 		super();
 	}
 
-	public CalendarioDto(Date data, String descricao) {
+	public CalendarioDto(LocalDate diaInicial, LocalDate diaFinal, LocalTime hrInicial, LocalTime hrFinal,
+			String descricao) {
 		super();
-		this.data = data;
+		this.diaInicial = diaInicial;
+		this.diaFinal = diaFinal;
+		this.hrInicial = hrInicial;
+		this.hrFinal = hrFinal;
 		this.descricao = descricao;
 	}
 
-	public Date getData() {
-		return data;
+	public LocalDate getDiaInicial() {
+		return diaInicial;
+	}
+
+	public LocalDate getDiaFinal() {
+		return diaFinal;
+	}
+
+	public LocalTime getHrInicial() {
+		return hrInicial;
+	}
+
+	public LocalTime getHrFinal() {
+		return hrFinal;
 	}
 
 	public String getDescricao() {
 		return descricao;
 	}
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public CalendarioDto EntidDto(Calendario calen) {
-		CalendarioDto dto = new CalendarioDto();
-		dto.setData(calen.getData());
-		dto.setDescricao(calen.getDescricao());
-		return dto;
-	}
-
+	
+	
 	
 
 }
