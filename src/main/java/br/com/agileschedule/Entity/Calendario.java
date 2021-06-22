@@ -1,6 +1,8 @@
 package br.com.agileschedule.Entity;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,22 +17,34 @@ public class Calendario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "data")
-	private Date data;
+	@Column(name = "diaInicial")
+	private LocalDate diaInicial;
+	
+	@Column(name = "diaFinal")
+	private LocalDate diaFinal;
+	
+	@Column(name = "hrInicial")
+	private LocalTime hrInicial;
+	
+	@Column(name = "hrFinal")
+	private LocalTime hrFinal;
 	
 	@Column(name = "descricao")
 	private String descricao;
-	
-	public Calendario( Date data, String descricao) {
+
+	public Calendario(LocalDate diaInicial, LocalDate diaFinal, LocalTime hrInicial, LocalTime hrFinal,	String descricao) {
 		super();
-		this.data = data;
+		this.diaInicial = diaInicial;
+		this.diaFinal = diaFinal;
+		this.hrInicial = hrInicial;
+		this.hrFinal = hrFinal;
 		this.descricao = descricao;
 	}
 
 	public Calendario() {
+		super();
 	}
 
-	
 	public Long getId() {
 		return id;
 	}
@@ -39,12 +53,36 @@ public class Calendario {
 		this.id = id;
 	}
 
-	public Date getData() {
-		return data;
+	public LocalDate getDiaInicial() {
+		return diaInicial;
 	}
 
-	public void setData(Date data) {
-		this.data = data;
+	public void setDiaInicial(LocalDate diaInicial) {
+		this.diaInicial = diaInicial;
+	}
+
+	public LocalDate getDiaFinal() {
+		return diaFinal;
+	}
+
+	public void setDiaFinal(LocalDate diaFinal) {
+		this.diaFinal = diaFinal;
+	}
+
+	public LocalTime getHrInicial() {
+		return hrInicial;
+	}
+
+	public void setHrInicial(LocalTime hrInicial) {
+		this.hrInicial = hrInicial;
+	}
+
+	public LocalTime getHrFinal() {
+		return hrFinal;
+	}
+
+	public void setHrFinal(LocalTime hrFinal) {
+		this.hrFinal = hrFinal;
 	}
 
 	public String getDescricao() {
@@ -53,7 +91,11 @@ public class Calendario {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
+	} 
+	
+	
+	
+	
+	
 	
 }
